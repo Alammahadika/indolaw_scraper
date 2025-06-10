@@ -13,27 +13,46 @@ Develop a modular Python package that can be used to scrape various official Ind
 
 ```
 indolaw_scraper/
-├── 📁 scrapers/                # Semua scraper terorganisir
-│   ├── 📁 national/           # Lembaga nasional
-│   │   ├── 🐍 dpr.py         # DPR.go.id
-│   │   ├── 🐍 mkri.py        # Mahkamah Konstitusi
-│   │   └── ...
-│   │
-│   ├── 📁 regional/          # Peraturan daerah
-│   │   ├── 🐍 dki_jakarta.py
-│   │   └── ...
-│   │
-│   └── 📁 ministries/        # ministry
-│       ├── 🐍 kemendagri.py
-│       └── ...
 │
-├── 📁 core/                  # Modul inti
-│   ├── 🐍 downloader.py      # Unduh dokumen
-│   ├── 🐍 parser.py         # Ekstrak teks
-│   └── 🐍 storage.py        # Simpan ke database
+├── scrapers/ # Semua scraper terorganisir
+│ ├── national/ # Lembaga nasional
+│ │ ├── dpr.py # DPR.go.id
+│ │ ├── mkri.py # Mahkamah Konstitusi
+│ │ └── ...
+│ │
+│ ├── regional/ # Peraturan daerah
+│ │ └── dki_jakarta.py # DKI Jakarta
+│ │ └── ...
+│ │
+│ └── ministries/ # Kementerian
+│ └── kemendagri.py
+│ └── ...
 │
-├── 📄 README.md              # Dokumentasi utama (lihat template di bawah)
-└── 📄 requirements.txt       # Dependensi
+├── core/ # Modul inti
+│ ├── downloader.py # Unduh dokumen
+│ ├── parser.py # Ekstrak teks
+│ └── storage.py # Simpan ke database
+│
+├── archive/ # Folder arsip dokumen PDF
+│ ├── uu/ # Undang-undang
+│ ├── ruu/ # RUU
+│ ├── perpres/ # Peraturan Presiden
+│ └── perda/ # Peraturan Daerah
+│
+├── metadata/ # Metadata YAML atau JSON per dokumen
+│ ├── uu.yaml
+│ ├── perpres.yaml
+│ └── perda.yaml
+│
+├── tests/ # Unit tests
+│ └── test_jdih.py
+│
+├── utils.py # Fungsi bantu
+├── config.py # Konfigurasi URL, headers, keyword
+├── presidents.yaml # Data Presiden (opsional)
+├── requirements.txt # Dependensi Python
+├── setup.py # Setup installasi package
+└── README.md # Dokumentasi proyek
 
 
 ```
