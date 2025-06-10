@@ -1,7 +1,7 @@
 # 🇮🇩 INDONESIAN GOVERNEMNT DOCUMENT SCRAPER
 
 ## Project Description
-Indonesian Legislative Document Scraper is an open-source Python project for scraping and archiving legal and policy documents from official Indonesian government websites, such as JDIH.go.id, DPR.go.id, and others. 
+Indonesian Government Document Scraper is an open-source Python project for scraping and archiving legal and policy documents from official Indonesian government websites, such as JDIH.go.id, DPR.go.id, and others. 
 Inspired by the [FlatGov SAP US Project](https://flatgov.com), this project aims to build an open metadata repository and archive for Indonesian legal documents that is modular, open-source, and easy to use for researchers, students, and the public.
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
