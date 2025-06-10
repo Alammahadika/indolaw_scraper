@@ -1,0 +1,20 @@
+Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor
+.vscode/
+.idea/
+
+# MacOS
+.DS_Store
+
+# Virtual env
+env/
+venv/
+
+# Output scraping
+*.csv
+*.json
+*.xlsx
