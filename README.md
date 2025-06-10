@@ -9,21 +9,13 @@ Inspired by the [FlatGov SAP US Project](https://flatgov.com), this project aims
 
 ---
 
-## 📌 Project Objectives
-
-- Scrape and store legal documents (PDF + metadata) from various Indonesian government institutions.
-- Organize outputs for academic, journalistic, and civic tech use.
-- Develop a modular Python package that can easily be extended to other legal sources.
-
----
-
-## 📂 Project Structure
-
 
 ## Project Objectives
 Obtain and store legal documents (UU, RUU, Perpres, etc.) in PDF format and metadata.
 Make it easier for researchers, students, and the public to access legal documents.
 Develop a modular Python package that can be used to scrape various official Indonesian sources.
+
+---
 
 ## Project Structures
 
