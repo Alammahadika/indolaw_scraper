@@ -64,3 +64,10 @@ indolaw_scraper/
 
 
 ```
+---
+## Getting Started
+
+```bash
+   git clone https://github.com/Alammahadika/indolaw_scraper.git
+   cd indolaw_scraper
+```
