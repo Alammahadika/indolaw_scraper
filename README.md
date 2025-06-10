@@ -2,7 +2,23 @@
 
 ## Project Description
 Indonesian Legislative Document Scraper is an open-source Python project for scraping and archiving legal and policy documents from official Indonesian government websites, such as JDIH.go.id, DPR.go.id, and others. 
-The project is inspired by the FlatGov SAP US Project and aims to build an open metadata repository and archive of Indonesian legislative documents.
+Inspired by the [FlatGov SAP US Project](https://flatgov.com), this project aims to build an open metadata repository and archive for Indonesian legal documents that is modular, open-source, and easy to use for researchers, students, and the public.
+
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+## 📌 Project Objectives
+
+- Scrape and store legal documents (PDF + metadata) from various Indonesian government institutions.
+- Organize outputs for academic, journalistic, and civic tech use.
+- Develop a modular Python package that can easily be extended to other legal sources.
+
+---
+
+## 📂 Project Structure
+
 
 ## Project Objectives
 Obtain and store legal documents (UU, RUU, Perpres, etc.) in PDF format and metadata.
