@@ -20,23 +20,23 @@ Develop a modular Python package that can be used to scrape various official Ind
 ## Project Structures
 
 ```
-indolaw_scraper/
+├── README.md
+├── requirements.txt
+├── setup.py
+├── metadata/
+│   ├── perda.yaml
+│   ├── perpres.yaml
+│   └── uu.yaml
+├── tests/
+│   └── test_jdih.py
 ├── indolaw_scraper/
 │   ├── __init__.py
 │   ├── cli.py
-│   ├── scraper/
-│   │   ├── __init__.py
-│   │   ├── mahkamah_agung.py
-│   │   ├── komisi_pemilihan_umum.py
-│   │   ├── kementerian_pendidikan.py  
-│   │   └── [other institution].py     
-│   ├── utils/
-│   │   ├── __init__.py
-│   │   └── save.py               👈 save CSV, JSON, etc. 
-├── requirements.txt
-├── setup.py
-└── README.md
- 
+│   ├── config.py
+│   ├── utils.py
+│   └── scraper/
+│       ├── __init__.py
+│       └── mahkamah_agung.py
 
 ```
 ---
