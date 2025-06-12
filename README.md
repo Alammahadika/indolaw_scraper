@@ -61,7 +61,7 @@ indolaw_scraper/
 ├── requirements.txt # Dependensi Python
 ├── setup.py # Setup installasi package
 └── README.md # Dokumentasi proyek
-
+ 
 
 ```
 ---
