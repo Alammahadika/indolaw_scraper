@@ -1,0 +1,14 @@
+README.md
+setup.py
+indolaw_scraper/__init__.py
+indolaw_scraper/cli.py
+indolaw_scraper/config.py
+indolaw_scraper/utils.py
+indolaw_scraper.egg-info/PKG-INFO
+indolaw_scraper.egg-info/SOURCES.txt
+indolaw_scraper.egg-info/dependency_links.txt
+indolaw_scraper.egg-info/entry_points.txt
+indolaw_scraper.egg-info/top_level.txt
+indolaw_scraper/scraper/__init__.py
+indolaw_scraper/scraper/mahkamah_agung.py
+tests/test_jdih.py
