@@ -21,46 +21,21 @@ Develop a modular Python package that can be used to scrape various official Ind
 
 ```
 indolaw_scraper/
-│
-├── scrapers/ # Semua scraper terorganisir
-│ ├── national/ # Lembaga nasional
-│ │ ├── dpr.py # DPR.go.id
-│ │ ├── mkri.py # Mahkamah Konstitusi
-│ │ └── ...
-│ │
-│ ├── regional/ # Peraturan daerah
-│ │ └── dki_jakarta.py # DKI Jakarta
-│ │ └── ...
-│ │
-│ └── ministries/ # Kementerian
-│ └── kemendagri.py
-│ └── ...
-│
-├── core/ # Modul inti
-│ ├── downloader.py # Unduh dokumen
-│ ├── parser.py # Ekstrak teks
-│ └── storage.py # Simpan ke database
-│
-├── archive/ # Folder arsip dokumen PDF
-│ ├── uu/ # Undang-undang
-│ ├── ruu/ # RUU
-│ ├── perpres/ # Peraturan Presiden
-│ └── perda/ # Peraturan Daerah
-│
-├── metadata/ # Metadata YAML atau JSON per dokumen
-│ ├── uu.yaml
-│ ├── perpres.yaml
-│ └── perda.yaml
-│
-├── tests/ # Unit tests
-│ └── test_jdih.py
-│
-├── utils.py # Fungsi bantu
-├── config.py # Konfigurasi URL, headers, keyword
-├── presidents.yaml # Data Presiden (opsional)
-├── requirements.txt # Dependensi Python
-├── setup.py # Setup installasi package
-└── README.md # Dokumentasi proyek
+├── indolaw_scraper/
+│   ├── __init__.py
+│   ├── cli.py
+│   ├── scraper/
+│   │   ├── __init__.py
+│   │   ├── mahkamah_agung.py
+│   │   ├── komisi_pemilihan_umum.py
+│   │   ├── kementerian_pendidikan.py  
+│   │   └── [other institution].py     
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   └── save.py               👈 save CSV, JSON, etc. 
+├── requirements.txt
+├── setup.py
+└── README.md
  
 
 ```
