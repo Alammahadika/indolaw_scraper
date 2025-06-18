@@ -21,22 +21,26 @@ Develop a modular Python package that can be used to scrape various official Ind
 
 ```
 ├── README.md
+├── indolaw_scraper
+│   ├── __init__.py
+│   ├── cli.py
+│   ├── config.py
+│   ├── models
+│   ├── scraper
+│   └── utils.py
+├── metadata
+│   ├── perda.yaml
+│   ├── perpres.yaml
+│   └── uu.yaml
 ├── requirements.txt
 ├── setup.py
-├── metadata/
-│   ├── perda.yaml
-│   ├── perpres.yaml
-│   └── uu.yaml
-├── tests/
-│   └── test_jdih.py
-├── indolaw_scraper/
-│   ├── __init__.py
-│   ├── cli.py
-│   ├── config.py
-│   ├── utils.py
-│   └── scraper/
-│       ├── __init__.py
-│       └── mahkamah_agung.py
+├── tests
+│   └── test_jdih.py
+└── venv-indolaw
+    ├── bin
+    ├── include
+    ├── lib
+    └── pyvenv.cfg
 
 ```
 ---
