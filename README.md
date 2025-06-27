@@ -41,7 +41,7 @@ indolaw_scraper/
 │
 ├── requirements.txt     # <- library using (requests, beautifulsoup4, click, dll)
 ├── README.md            # <- project description
-└── LICENSE              # <- optional (misal: MIT)
+└── LICENSE              # <- optional (ex: MIT)
 
 
 ```
