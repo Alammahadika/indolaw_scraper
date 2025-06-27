@@ -20,27 +20,29 @@ Develop a modular Python package that can be used to scrape various official Ind
 ## Project Structures
 
 ```
-├── README.md
-├── indolaw_scraper
-│   ├── __init__.py
-│   ├── cli.py
-│   ├── config.py
-│   ├── models
-│   ├── scraper
-│   └── utils.py
-├── metadata
-│   ├── perda.yaml
-│   ├── perpres.yaml
-│   └── uu.yaml
-├── requirements.txt
-├── setup.py
-├── tests
-│   └── test_jdih.py
-└── venv-indolaw
-    ├── bin
-    ├── include
-    ├── lib
-    └── pyvenv.cfg
+indolaw_scraper/
+│
+├── indolaw_scraper/
+│   ├── __init__.py
+│   ├── cli.py  # <- interface main
+│   ├── models/
+│   │   └── document.py  # <- dataclass LegalDocument
+│   └── scraper/
+│       ├── __init__.py
+│       ├── mahkamah_agung.py
+│       ├── kpu.py
+│       ├── bpk.py
+│       ├── kemendikdasmen.py
+│       ├── pertanian.py
+│       └── kkp.py
+│
+├── tests/
+│   └── test_scraper.py  
+│
+├── requirements.txt     # <- library using (requests, beautifulsoup4, click, dll)
+├── README.md            # <- project description
+└── LICENSE              # <- optional (misal: MIT)
+
 
 ```
 ---
