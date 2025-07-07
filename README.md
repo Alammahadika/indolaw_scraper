@@ -7,26 +7,25 @@ _An open-source Python project for scraping official legal and policy documents 
 
 ## 🔍 Overview
 
-**IndoLaw Scraper** adalah proyek Python sumber terbuka untuk mengumpulkan dan mengarsipkan dokumen hukum dan kebijakan dari situs web resmi pemerintah Indonesia, seperti:
+**IndoLaw Scraper** is an open-source Python project to collect and archive legal and policy documents from official Indonesian government websites, such as:
 - [JDIH Mahkamah Agung](https://jdih.mahkamahagung.go.id)
 - [JDIH KPU](https://jdih.kpu.go.id)
 - [JDIH Kemendikbud](https://jdih.kemendikdasmen.go.id)
 - [JDIH BPK](https://peraturan.bpk.go.id)
 - [dan lainnya...]
 
-Proyek ini terinspirasi oleh [FlatGov SAP US Project](https://flatgov.com/), dengan tujuan membuat metadata terbuka dan sistem arsip legal yang **modular**, **terbuka**, dan **mudah digunakan** untuk:
-- Peneliti hukum dan sosial-politik
-- Mahasiswa dan akademisi
-- Jurnalis data
-- Pengembang aplikasi hukum
+This project was inspired by the [FlatGov SAP US Project](https://flatgov.com/), with the goal of creating a **modular**, **open**, and **easy to use** open metadata and legal filing system for:
+- Researchers law and socio - politics
+- Student and Academicy
+- Developers Data
 
 ---
 
 ## 🎯 Project Objectives
 
-- ✅ Scraping dan menyimpan dokumen hukum (UU, Peraturan, SK, dsb.) dalam format PDF dan metadata.
-- ✅ Menyediakan interface command-line (CLI) untuk akses mudah scraping.
-- ✅ Membangun package Python modular yang bisa diperluas untuk berbagai lembaga.
+- ✅ Scraping and storing legal documents (UU, Regulations, Decrees, etc.) in metadata format.
+- ✅ Provides a command-line interface (CLI) for easy scraping access.
+- ✅ Building modular, extensible Python packages for multiple institutions.
 
 ---
 
