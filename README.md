@@ -12,7 +12,7 @@ _An open-source Python project for scraping official legal and policy documents 
 - [JDIH KPU](https://jdih.kpu.go.id)
 - [JDIH Kemendikbud](https://jdih.kemendikdasmen.go.id)
 - [JDIH BPK](https://peraturan.bpk.go.id)
-- [dan lainnya...]
+- [and others...]
 
 This project was inspired by the [FlatGov SAP US Project](https://flatgov.com/), with the goal of creating a **modular**, **open**, and **easy to use** open metadata and legal filing system for:
 - Researchers law and socio - politics
