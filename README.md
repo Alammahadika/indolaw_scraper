@@ -34,6 +34,5 @@ Proyek ini terinspirasi oleh [FlatGov SAP US Project](https://flatgov.com/), den
 ## Getting Started
 
 ```bash
-   git clone https://github.com/Alammahadika/indolaw_scraper.git
-   cd indolaw_scraper
+   python -m indolaw_scraper.cli --type peraturan --url "https://jdih.mahkamahagung.go.id/legal-product/..."
 ```
