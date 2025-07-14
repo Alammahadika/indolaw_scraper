@@ -103,7 +103,7 @@ def inspect_labels(url):
 if __name__ == "__main__":
     url = "https://jdih.komdigi.go.id/produk_hukum/view/id/954/t/keputusan+menteri+komunikasi+dan+digital+nomor+44+tahun+2025"
     data = get_detail_data(url)
-    print("=== DETAIL DOKUMEN KOMINFO ===")
+    print("=== MINISTRY OF COMMUNICATION AND INFORMATION DOCUMENT DETAILS ===")
     for k, v in data.items():
         print(f"{k}: {v}")
 
