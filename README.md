@@ -112,7 +112,7 @@ if __name__ == "__main__":
 ## Result Scraped
 
 ```text
-=== DETAIL DOKUMEN KOMINFO ===
+=== MINISTRY OF COMMUNICATION AND INFORMATION DOCUMENT DETAILS ===
 Tipe Dokumen                    : 
 Judul                          : Keputusan Menteri Komunikasi dan Digital Nomor 44 Tahun 2025 tentang Standar Teknis Transiver Radio Amatir
 T.E.U Badan                    : Indonesia. Kementerian Komunikasi dan Informatika
