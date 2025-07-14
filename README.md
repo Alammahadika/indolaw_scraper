@@ -39,72 +39,44 @@ This project was inspired by the [FlatGov SAP US Project](https://flatgov.com/),
 ## Getting Try
 
 ```py
-indolaw_scraper/sources/kominfo.py
+indolaw_scraper/sources/kemendag.py
 
 import requests
 from bs4 import BeautifulSoup
-import urllib3
+import json
 from indolaw_scraper.models.document import LegalDocument
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
 
-def get_soup(url):
-    res = requests.get(url, verify=False)
-    return BeautifulSoup(res.text, 'html.parser')
+def get_kemendag_data(url):
+    """Scrape metadata dokumen dari JDIH Kemendag."""
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=10)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Error saat mengambil data: {e}")
+        return {}
 
-def get_detail_data(url):
-    soup = get_soup(url)
-    field_map = {
-        "Tipe Dokumen": "Tipe Dokumen",
-        "Judul": "Judul",
-        "T.E.U. Badan/Pengarang": "T.E.U Badan",
-        "Nomor Peraturan": "Nomor Peraturan",
-        "Jenis / Bentuk Peraturan": "Jenis/Bentuk Peraturan",
-        "Singkatan Jenis/Bentuk Peraturan": "Singkatan Jenis/Bentuk Peraturan",
-        "Tempat Penetapan": "Tempat Penetapan",
-        "Tanggal-Bulan-Tahun Penetapan/Pengundangan": "Tanggal Ditetapkan / Diundangkan",
-        "Sumber": "Sumber",
-        "Subjek": "Subjek",
-        "Status Peraturan": "Status",
-        "Bahasa": "Bahasa",
-        "Lokasi": "Lokasi",
-        "Bidang Hukum": "Bidang Hukum",
-        "Lampiran": "Lampiran"
-    }
-    
+    soup = BeautifulSoup(response.content, 'html.parser')
+    rows = soup.select("table.table tbody tr")
     data = {}
-    for row in soup.select("table tr"):
+
+    for row in rows:
         cols = row.find_all("td")
-        if len(cols) >= 2:
+        if len(cols) == 2:
             label = cols[0].get_text(strip=True)
-            value = cols[1].get_text(strip=True).replace("\n", " ")
-            if label in field_map:
-                data[field_map[label]] = value
+            value = cols[1].get_text(strip=True)
+            data[label] = value
+
     return data
 
-def scrape_putusan_detail(url):
-    soup = get_soup(url)
-    data = get_detail_data(url)
-    return LegalDocument(
-        title=data.get("Judul"),
-        year=data.get("Tanggal Ditetapkan / Diundangkan", "")[:4],
-        pdf_url=soup.select_one('a.btn[href*="unduh"]')['href'] if soup.select_one('a.btn[href*="unduh"]') else None,
-        metadata=data
-    )
-
-def inspect_labels(url):
-    soup = get_soup(url)
-    for p in soup.select("div.tx-14 p"):
-        strong = p.find("strong")
-        if strong:
-            label = strong.get_text(strip=True).rstrip(':')
-            print(f"🔎 Ditemukan label: {label}")
-
 if __name__ == "__main__":
-    url = "https://jdih.komdigi.go.id/produk_hukum/view/id/954/t/keputusan+menteri+komunikasi+dan+digital+nomor+44+tahun+2025"
-    data = get_detail_data(url)
-    print("=== MINISTRY OF COMMUNICATION AND INFORMATION DOCUMENT DETAILS ===")
-    for k, v in data.items():
+    test_url = "https://jdih.kemendag.go.id/peraturan/keputusan-menteri-perdagangan-nomor-1484-tahun-2025-tentang-harga-referensi-crude-palm-oil-yang-dikenakan-bea-keluar-dan-tarif-layanan-badan-layanan-umum-badan-pengelola-dana-perkebunan-kelapa-sawit"
+    result = get_kemendag_data(test_url)
+    print("=== DETAIL DOKUMEN KEMENDAG ===")
+    for k, v in result.items():
         print(f"{k}: {v}")
 
 
@@ -112,22 +84,22 @@ if __name__ == "__main__":
 ## Result Scraped
 
 ```text
-=== MINISTRY OF COMMUNICATION AND INFORMATION DOCUMENT DETAILS ===
-Tipe Dokumen                    : 
-Judul                          : Keputusan Menteri Komunikasi dan Digital Nomor 44 Tahun 2025 tentang Standar Teknis Transiver Radio Amatir
-T.E.U Badan                    : Indonesia. Kementerian Komunikasi dan Informatika
-Nomor Peraturan                : 44
-Jenis/Bentuk Peraturan         : Keputusan Menteri
-Singkatan Jenis/Bentuk Peraturan: KEPMEN
-Tempat Penetapan               : Jakarta
-Tanggal Ditetapkan / Diundangkan: 18-02-2025 / -
-Sumber                         : -
-Subjek                         : 
-Status                         : Berlaku
-Bahasa                         : Indonesia
-Lokasi                         : 
-Bidang Hukum                   : Hukum Administrasi Negara
-Lampiran                       : Unduh Produk Hukum
 
+=== DETAIL DOKUMEN KEMENDAG ===
+Tipe Dokumen: Peraturan Perundang-undangan
+Judul: Keputusan Menteri Perdagangan Nomor 1484 Tahun 2025 tentang Harga Referensi Crude Palm Oil yang Dikenakan Bea Keluar dan Tarif Layanan Badan Layanan Umum Badan Pengelola Dana Perkebunan Kelapa Sawit
+T.E.U. Badan/Pengarang: Indonesia.Kementerian Perdagangan
+Nomor Peraturan: 1484
+Jenis / Bentuk Peraturan: Keputusan Menteri
+Singkatan Jenis / Bentuk Peraturan: Kepmendag
+Tempat Penetapan: Jakarta
+Tanggal Penetapan / Pengundangan: 28 Mei 2025 / -
+Sumber: -
+Subjek: CPO, Harga, Bea Keluar, Kelapa Sawit
+Status Peraturan: Berlaku
+Bahasa: Indonesia
+Lokasi: Jakarta
+Bidang Hukum: -
+Tematik: Kelapa Sawit
 
 ```
