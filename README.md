@@ -29,12 +29,7 @@ This project was inspired by the [FlatGov SAP US Project](https://flatgov.com/),
 
 ---
 
----
-## Getting Started
 
-```bash
-   python -m indolaw_scraper.cli --type peraturan --url "https://jdih.mahkamahagung.go.id/legal-product/..."
-```
 ---
 ## Getting Try
 
@@ -81,6 +76,7 @@ if __name__ == "__main__":
 
 
 ```
+---
 ## Result Scraped
 
 ```text
@@ -103,11 +99,36 @@ Bidang Hukum: -
 Tematik: Kelapa Sawit
 
 ```
-
+---
 ## CLI Command to Scrape Document 
 
 ```bash
 
 python -m indolaw_scraper.cli --source bpk --url "https://peraturan.bpk.go.id/Details/227490/peraturan-kpk-no-5-tahun-2018"
+
+```
+---
+
+## Resut Scraped
+
+```text
+
+=== DETAIL DOKUMEN BPK ===
+Judul: Peraturan KPK No. 5 Tahun 2018  
+Nomor: 5  
+Tahun: 2018  
+T.E.U. Badan / Pengarang: N/A  
+Tipe Dokumen: Peraturan Perundang-undangan  
+Bentuk: Peraturan Komisi Pemberantasan Korupsi  
+Singkatan Bentuk: N/A  
+Tempat Penetapan: Jakarta  
+Tanggal Penetapan: 21 Mei 2018  
+Tanggal Pengundangan: 24 Mei 2018  
+Tanggal Berlaku: 24 Mei 2018  
+Sumber: BN. 2018 No. 692, www.peraturan.go.id  
+Subjek: KEPEGAWAIAN, APARATUR NEGARA  
+Status: Tidak Berlaku  
+Bahasa: Bahasa Indonesia  
+Bidang Hukum: N/A  
 
 ```
