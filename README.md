@@ -103,3 +103,11 @@ Bidang Hukum: -
 Tematik: Kelapa Sawit
 
 ```
+
+## CLI Command to Scrape Document 
+
+```bash
+
+python -m indolaw_scraper.cli --source bpk --url "https://peraturan.bpk.go.id/Details/227490/peraturan-kpk-no-5-tahun-2018"
+
+```
