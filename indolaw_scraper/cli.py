@@ -1,4 +1,5 @@
 import click
+import pandas as pd
 import json
 from indolaw_scraper.models.document import LegalDocument
 from indolaw_scraper.scraper.mahkamah_agung import get_detail_data as scrape_ma
@@ -19,7 +20,6 @@ from indolaw_scraper.scraper.itb import scrape_itb_detail
 from indolaw_scraper.scraper.dpr import scrape_dpr_detail
 from indolaw_scraper.scraper.kehutanan import scrape_forestry_document
 from indolaw_scraper.scraper.tni import get_tni_data
-
 
 
 
@@ -116,11 +116,12 @@ def main(source, url, bulk, pages, output):
             data = scrape_kemendag(url)
 
         elif source == "tni":
-            data = get_tni_data(pages)
-            click.secho("\n=== DAFTAR PERATURAN PANGLOMA TNI ===", fg="green", bold=True)
-            print(json.dumps(data, indent=2, ensure_ascii=False))
-            return
-       
+            from indolaw_scraper.scraper.tni import get_tni_data
+            data = get_tni_data()
+            df = pd.DataFrame(data)
+            pd.set_option("display.max_colwidth", 200)
+            print(df.head(2).to_string(index=False))
+
         elif source == "itb":
             data = scrape_itb_detail(url)
 
