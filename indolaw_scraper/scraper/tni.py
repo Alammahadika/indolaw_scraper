@@ -47,13 +47,9 @@ def get_tni_data(page: int = 15):
     return data
 
 
-# Jalankan fungsi untuk ambil data
-data = get_tni_data()
+if __name__ == "__main__":
+    df = pd.DataFrame(get_tni_data())
+    pd.set_option("display.max_colwidth", 200)
+    print(df.head(3))
 
-# Konversi ke DataFrame
-df = pd.DataFrame(data)
-
-# Tampilkan hasilnya
-pd.set_option("display.max_colwidth", 200)
-print(df.head(3))
 
