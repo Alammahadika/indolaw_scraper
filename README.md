@@ -43,7 +43,7 @@ pip install indolaw-scraper
 
 ## Run 
 ```bash
-python -m indolaw_scraper.cli --source bpk --url "https://peraturan.bpk.go.id/Details/227490/peraturan-kpk-no-5-tahun-2018"
+scrape_bpk "https://peraturan.bpk.go.id/Details/227490/peraturan-kpk-no-5-tahun-2018"
 ```
 
 ## Result
